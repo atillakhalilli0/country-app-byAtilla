@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../img/wired-gradient-27-globe-hover-rotate.png";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import './Navbar.css'
 
 const Navbar = ({ country, setRegion }) => {
   const uniqueRegions = [...new Set(country.map((item) => item.region))];
