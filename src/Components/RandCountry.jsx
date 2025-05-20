@@ -4,7 +4,7 @@ function RandCountry({ rand, country }) {
   console.log(rand);
   const item = country[rand];
   return (
-    <div className="w-[85%] mx-auto flex justify-center items-center my-20">
+    <div className="w-full mx-auto flex justify-center items-center my-20">
       <div className="max-w-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-[0px_15px_24px_10px_rgba(66,68,90,1)] dark:hover:shadow-[0px_15px_24px_10px_rgba(255,255,255,0.6)] hover:-translate-y-3 transition-all duration-400">
         <a href="#">
           <img
