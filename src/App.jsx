@@ -61,7 +61,7 @@ function App() {
               ))
           : "no countries found"}
       </div>
-      {country.length > load && (
+      {filteredCountries.length > load && (
         <div className="flex items-center justify-center mt-10">
           <button
             onClick={loadMore}
