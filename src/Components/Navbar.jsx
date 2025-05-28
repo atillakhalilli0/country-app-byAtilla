@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import logo from "../../img/wired-gradient-27-globe-hover-rotate.png";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
-import './Navbar.css'
+import './Navbar.css';
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ country, setRegion }) => {
   const uniqueRegions = [...new Set(country.map((item) => item.region))];
@@ -28,20 +29,22 @@ const Navbar = ({ country, setRegion }) => {
             </span>
           </div>
           <div className="hidden md:flex space-x-4">
-            <button
+            <NavLink
+              to={"/"}
               className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
               onClick={() => setRegion("")}
             >
               All
-            </button>
+            </NavLink>
             {uniqueRegions.map((region) => (
-              <button
+              <NavLink
+                to={`/region/${region}`}
                 key={region}
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
                 onClick={() => setRegion(region)}
               >
                 {region}
-              </button>
+              </NavLink>
             ))}
           </div>
           <div className="flex items-center">
@@ -62,6 +65,7 @@ const Navbar = ({ country, setRegion }) => {
           </div>
         </div>
       </div>
+
       {menuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 px-2 pt-2 pb-3 space-y-1">
           <button

@@ -2,6 +2,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -9,4 +10,8 @@
 
 .spin-logo {
   animation: spin-slow 2s linear infinite;
+}
+
+.active {
+  color: #5500ff;
 }
