@@ -1,10 +1,11 @@
 import { useState } from "react";
 import country from "./Components/CountryData";
 import Navbar from "./Components/Navbar";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Components/Home";
 import Hero from "./Components/Hero";
 import CardDetail from "./Components/CardDetail";
+import NotFound from "./Components/NotFound";
 
 function App() {
    const [region, setRegion] = useState("");
@@ -40,6 +41,8 @@ function App() {
             <Route path="/" element={<Home country={country} load={load} rand={rand} search={search} setRand={setRand} setSearch={setSearch} show={show} showSection={showSection} haveaLook={haveaLook} />} />
             <Route path="/region/:region" element={<Home country={country} load={load} rand={rand} setRand={setRand} setSearch={setSearch} show={show} showSection={showSection} haveaLook={haveaLook} />} />
             <Route path="/details/:alpha3Code" element={<CardDetail country={country} />} />
+            <Route path="/notfound" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/notfound" replace />} />
          </Routes>
          {!location.pathname.startsWith("/details") && filteredCountries.length > load && (
             <div className="flex items-center justify-center mt-10">

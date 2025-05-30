@@ -1,12 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 function CardDetail({ country }) {
    const { alpha3Code } = useParams();
    const selectedCountry = country.find((item) => item.alpha3Code === alpha3Code);
 
    if (!selectedCountry) {
-      return <div className="text-center text-red-500">Country not found</div>;
+      return <Navigate to="/notfound" />;
    }
 
    return (
